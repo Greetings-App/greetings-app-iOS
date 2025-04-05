@@ -60,3 +60,53 @@ fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots/**/*.png
 fastlane/test_output
+
+# Xcode specific files
+.DS_Store
+*.swp
+*.xcuserstate
+*.xcscmblueprint
+*.xcworkspace
+*.xccheckout
+*.xcdebugger
+*.moved-aside
+
+# Xcode project files
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+
+# Xcode build files
+DerivedData/
+*.hmap
+build/
+*.xcarchive
+
+# Simulator data
+Library/Developer/CoreSimulator/
+
+
+# User settings and workspace data
+*.xcuserdatad/
+*.xcuserdata/
+*.xcworkspace/xcuserdata/
+
+# Provisioning Profiles
+*.mobileprovision
+*.provisionprofile
+
+# Archives
+*.xcarchive
+
+# Playgrounds generated files
+timeline.xctimeline
+playground.xcworkspace
+
+# Generated test and result files
+*.xctest
+*.xcresult
+
+# CocoaPods
+Pods/
+Podfile.lock
