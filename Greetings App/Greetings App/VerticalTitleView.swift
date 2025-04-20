@@ -1,24 +1,23 @@
 //
-//  TitleView.swift
+//  VerticalTitleView.swift
 //  Greetings App
 //
-//  Created by Omar Assidi on 06/04/2025.
+//  Created by Omar Assidi on 18/04/2025.
 //
 
 import SwiftUI
 
-struct TitleView: View {
+struct VerticalTitleView: View {
     @State private var subTitle: LocalizedStringKey = "Explore SwiftUI Development"
     var body: some View {
-        HStack {
+        VStack(alignment: .leading) {
             GreetingsTextView(subTitle: $subTitle)
-            Spacer()
             RingView()
-        }
+            Spacer()
+        }.padding()
     }
 }
 
 #Preview {
-    TitleView()
-        .padding()
+    VerticalTitleView()
 }

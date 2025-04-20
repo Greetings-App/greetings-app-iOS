@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct TextView: View {
-    let text: String
+    let text: LocalizedStringKey
     @State var color: Color
+    @Environment(\.horizontalSizeClass) var horizontalSizeClass
+    @Environment(\.verticalSizeClass) var verticalSizeClass
     let colors: [Color] = [
         .red,
         .green,
@@ -22,8 +24,15 @@ struct TextView: View {
         Color(red: 139/255, green: 207/255, blue: 240/255),
         Color (red: 1, green: 215/255, blue: 0)
     ]
+    private var isIpad: Bool {
+        horizontalSizeClass == .regular && verticalSizeClass == .regular
+    }
+    private var font: Font {
+        isIpad ? .largeTitle : .body
+    }
     var body: some View {
         Text(text)
+            .font(font)
             .fontWeight(.semibold)
             .foregroundColor(Color.white)
             .padding()

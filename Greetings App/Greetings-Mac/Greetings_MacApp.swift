@@ -1,15 +1,15 @@
 //
-//  Greetings_AppApp.swift
-//  Greetings App
+//  Greetings_MacApp.swift
+//  Greetings-Mac
 //
-//  Created by Omar Assidi on 06/04/2025.
+//  Created by Omar Assidi on 19/04/2025.
 //
 
 import SwiftUI
 import TipKit
 
 @main
-struct Greetings_AppApp: App {
+struct Greetings_MacApp: App {
     @AppStorage("language") var language: String = LanguageConstants.ENGLISH
     @AppStorage("direction") var direction: String =  LanguageConstants.LEFT_TO_RIGHT
     

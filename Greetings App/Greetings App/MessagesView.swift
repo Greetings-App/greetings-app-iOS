@@ -12,7 +12,7 @@ struct MessagesView: View {
         .init(text: "Welcome to SwiftUI Programming", color: .gray),
         .init(text: "Hello there", color: .green),
         .init(text: "Yes I am", color: .yellow),
-        .init(text: "Boom.", color: .red),
+        .init(text: "Boom", color: .red),
     ]
     var body: some View {
         VStack(alignment: .leading) {
