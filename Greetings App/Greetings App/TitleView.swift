@@ -9,16 +9,17 @@ import SwiftUI
 
 struct TitleView: View {
     @State private var subTitle: LocalizedStringKey = "Explore SwiftUI Development"
+    @Binding var isDarkMode: Bool
     var body: some View {
         HStack {
             GreetingsTextView(subTitle: $subTitle)
             Spacer()
-            RingView()
+            RingView(isDarkMode: $isDarkMode)
         }
     }
 }
 
 #Preview {
-    TitleView()
+    TitleView(isDarkMode: .constant(false))
         .padding()
 }

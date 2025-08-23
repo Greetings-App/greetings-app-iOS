@@ -9,15 +9,16 @@ import SwiftUI
 
 struct VerticalTitleView: View {
     @State private var subTitle: LocalizedStringKey = "Explore SwiftUI Development"
+    @Binding var isDarkMode: Bool
     var body: some View {
         VStack(alignment: .leading) {
             GreetingsTextView(subTitle: $subTitle)
-            RingView()
+            RingView(isDarkMode: $isDarkMode)
             Spacer()
         }.padding()
     }
 }
 
 #Preview {
-    VerticalTitleView()
+    VerticalTitleView(isDarkMode: .constant(false))
 }

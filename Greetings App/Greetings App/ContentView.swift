@@ -8,11 +8,12 @@
 import SwiftUI
 
 struct ContentView: View {
+    @Binding var isDarkMode: Bool
     var body: some View {
         ZStack {
             BackgroundView()
             VStack(alignment: .leading) {
-                TitleView()
+                TitleView(isDarkMode: $isDarkMode)
                 Spacer()
                 MessagesView()
                 Spacer()
@@ -23,5 +24,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    ContentView(isDarkMode: .constant(false))
 }

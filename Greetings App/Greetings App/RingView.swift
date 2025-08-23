@@ -14,6 +14,7 @@ struct RingView: View {
     var angle: Angle {
         isRotated ? .zero : .degrees(360)
     }
+    @Binding var isDarkMode: Bool
     var gradient: AngularGradient {
         AngularGradient.init(gradient: Gradient(colors: [.pink, .purple, .blue, .orange, .yellow]), center: .center, angle: angle)
     }
@@ -25,11 +26,12 @@ struct RingView: View {
             .onTapGesture {
                 withAnimation {
                     isRotated.toggle()
+                    isDarkMode.toggle()
                 }
             }
     }
 }
 
 #Preview {
-    RingView()
+    RingView(isDarkMode: .constant(false))
 }

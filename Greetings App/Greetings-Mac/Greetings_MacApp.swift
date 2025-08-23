@@ -12,6 +12,7 @@ import TipKit
 struct Greetings_MacApp: App {
     @AppStorage("language") var language: String = LanguageConstants.ENGLISH
     @AppStorage("direction") var direction: String =  LanguageConstants.LEFT_TO_RIGHT
+    @AppStorage("isDarkMode") var isDarkMode: Bool = false
     
     private var layoutDirection: LayoutDirection {
         direction == LanguageConstants.RIGHT_TO_LEFT ? .rightToLeft : .leftToRight
@@ -19,7 +20,7 @@ struct Greetings_MacApp: App {
     var body: some Scene {
         WindowGroup {
             if #available(iOS 17.0, *) {
-                MainView(language: $language, direction: $direction)
+                MainView(language: $language, direction: $direction, isDark: $isDarkMode)
                     .environment(\.locale, Locale(identifier: language))
                     .environment(\.layoutDirection, layoutDirection)
                     .task {
@@ -30,7 +31,7 @@ struct Greetings_MacApp: App {
                         ])
                     }
             } else {
-                MainView(language: $language, direction: $direction)
+                MainView(language: $language, direction: $direction, isDark: $isDarkMode)
                     .environment(\.locale, Locale(identifier: language))
                     .environment(\.layoutDirection, layoutDirection)
             }

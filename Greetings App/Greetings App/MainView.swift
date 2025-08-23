@@ -19,10 +19,11 @@ struct MainView: View {
     }
     @Binding var language: String
     @Binding var direction: String
+    @Binding var isDarkMode: Bool
     var body: some View {
         if isPortrait || isIpad {
             NavigationView {
-                ContentView()
+                ContentView(isDarkMode: $isDarkMode)
                     .toolbar {
                         ToolbarItem(placement: .topBarTrailing) {
                             LanguageOptionsView(language: $language, direction: $direction)
@@ -30,11 +31,12 @@ struct MainView: View {
                     }
             }
         } else {
-            LandscapeContentView()
+            LandscapeContentView(isDarkMode: $isDarkMode)
         }
     }
 }
 
 #Preview {
-    MainView(language: .constant("en"), direction: .constant("ltr"))
+    MainView(
+        language: .constant("en"), direction: .constant("ltr"), isDarkMode: .constant(false))
 }

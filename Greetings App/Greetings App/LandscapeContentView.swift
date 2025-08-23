@@ -8,11 +8,12 @@
 import SwiftUI
 
 struct LandscapeContentView: View {
+    @Binding var isDarkMode: Bool
     var body: some View {
         ZStack {
             BackgroundView()
             HStack {
-                VerticalTitleView()
+                VerticalTitleView(isDarkMode: $isDarkMode)
                 Spacer()
                 MessagesView()
                 Spacer()
@@ -22,5 +23,5 @@ struct LandscapeContentView: View {
 }
 
 #Preview {
-    LandscapeContentView()
+    LandscapeContentView(isDarkMode: .constant(false))
 }

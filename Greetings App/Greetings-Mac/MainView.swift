@@ -9,9 +9,10 @@ import SwiftUI
 struct MainView: View {
     @Binding var language: String
     @Binding var direction: String
+    @Binding var isDark: Bool
     var body: some View {
         
-            ContentView()
+        ContentView(isDarkMode: $isDark)
                 .toolbar {
                     ToolbarItem(placement: .navigation) {
                         LanguageOptionsView(language: $language, direction: $direction)
@@ -22,5 +23,5 @@ struct MainView: View {
 }
 
 #Preview {
-    MainView(language: .constant("en"), direction: .constant("ltr"))
+    MainView(language: .constant("en"), direction: .constant("ltr"), isDark: .constant(false))
 }
